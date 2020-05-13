@@ -96,6 +96,20 @@ export const Content = styled.div`
     @media(max-width: 700px) {
         background: url(${backMobile}) no-repeat center;
         background-size: cover;
+        max-height: 100vh;
+
+        form {
+            input {
+                width: 90%;
+            }
+            button {
+                width: 90%;
+            }
+        }
+
+        > a {
+            margin-top: 0;
+        }
     }
 `;
 
