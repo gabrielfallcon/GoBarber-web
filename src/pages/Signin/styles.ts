@@ -99,6 +99,8 @@ export const Content = styled.div`
         max-height: 100vh;
 
         form {
+            margin: 30px 0px;
+
             input {
                 width: 90%;
             }
