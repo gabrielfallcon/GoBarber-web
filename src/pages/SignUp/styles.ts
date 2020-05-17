@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 import { shade } from 'polished';
 
-import backgorundImage from '../../assets/sign-in-background.png';
-import backMobile from '../../assets/sign-in-background-mobile.png';
+import backgorundImage from '../../assets/register-background.png';
+import backMobile from '../../assets/register-mobile.png';
 
 export const Container = styled.div`
     height: 100vh;
@@ -28,6 +28,7 @@ export const Content = styled.div`
             margin-bottom: 24px;
         }
 
+
         > a {
             color: #F4EDE8;
             display: block;
@@ -39,10 +40,17 @@ export const Content = styled.div`
                 color: ${shade(0.2, '#F4EDE8')}
             }
         }
+
+        @media(max-width: 700px) {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+        }
     }
 
     > a {
-        color: #FF9000;
+        color: #F4EDE8;
         display: block;
         margin-top: 24px;
         text-decoration: none;
@@ -51,7 +59,7 @@ export const Content = styled.div`
         align-items: center;
 
         &:hover {
-            color: ${shade(0.2, '#FF9000')}
+            color: ${shade(0.2, '#F4EDE8')}
         }
 
         svg {
