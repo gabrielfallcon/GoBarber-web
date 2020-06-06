@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 import { shade } from 'polished';
 
 import backgorundImage from '../../assets/register-background.png';
@@ -19,6 +19,32 @@ export const Content = styled.div`
     width: 100%;
     max-width: 700px;
 
+    @media(max-width: 700px) {
+        background: url(${backMobile}) no-repeat center;
+        background-size: cover;
+        max-height: 100vh;
+    }
+`;
+
+const appearFromRight = keyframes`
+    from {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0)
+    }
+`;
+
+export const AnimationContainer = styled.div`
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    place-content: center;
+
+    animation: ${appearFromRight} 1s;
+
     form {
         margin: 80px 0px;
         width: 340px;
@@ -27,7 +53,6 @@ export const Content = styled.div`
         h1 {
             margin-bottom: 24px;
         }
-
 
         > a {
             color: #F4EDE8;
@@ -40,17 +65,10 @@ export const Content = styled.div`
                 color: ${shade(0.2, '#F4EDE8')}
             }
         }
-
-        @media(max-width: 700px) {
-            display: flex;
-            justify-content: center;
-            flex-direction: column;
-            align-items: center;
-        }
     }
 
     > a {
-        color: #F4EDE8;
+        color: #FF9000;
         display: block;
         margin-top: 24px;
         text-decoration: none;
@@ -59,7 +77,7 @@ export const Content = styled.div`
         align-items: center;
 
         &:hover {
-            color: ${shade(0.2, '#F4EDE8')}
+            color: ${shade(0.2, '#FF9000')}
         }
 
         svg {
@@ -68,9 +86,6 @@ export const Content = styled.div`
     }
 
     @media(max-width: 700px) {
-        background: url(${backMobile}) no-repeat center;
-        background-size: cover;
-        max-height: 100vh;
 
         form {
             margin: 30px 0px;
@@ -81,6 +96,7 @@ export const Content = styled.div`
         }
     }
 `;
+
 
 export const Background = styled.div`
     flex: 1;
